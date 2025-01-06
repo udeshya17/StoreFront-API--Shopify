@@ -1,7 +1,11 @@
 const router = require("express").Router();
-const {fetchProduct} = require("../controllers/product.controller");
+const {fetchProduct, getProductById, updateProduct} = require("../controllers/product.controller");
 
-router.get("/", fetchProduct)
+router.get("/getproducts", fetchProduct)
+
+router.get("/:id", getProductById);
+
+router.patch("/:id", updateProduct);
 
 module.exports = router;
 

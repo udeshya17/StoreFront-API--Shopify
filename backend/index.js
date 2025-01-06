@@ -5,13 +5,14 @@ const getProduct = require("./routes/product.route");
 
 const server = express();
 const PORT = 8020;
-
+server.use(express.json());
 
 server.use(cors());
 
 
 
-server.use("/getproducts", getProduct);
+server.use("/", getProduct);
+
 
 server.listen(PORT, () => {
   console.log(`Backend is running on ${PORT}`);
